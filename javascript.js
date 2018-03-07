@@ -1,48 +1,11 @@
-var frugtArray = [];
-var prisialt, apple, pear, banana, orange, peach;
-apple = 0;
-pear = 0;
-banana = 0;
-orange = 0;
-peach = 0;
-
-function addFruit(fruit) {
-    var fruit;
-    if (fruit === 'parApple') {
-        apple++;
-        frugtArray[0] = apple;
-        document.getElementById("appleholder").innerHTML = "Antal æbler: " + (apple);
+var frugtArray = [0, 0, 0, 0, 0]; //frugtArray er vores "liste", som husker de tildelte værdier. Den indstiller her vores array til at have 5 start værdier af 0.
+function addFruit(fruit) { //addFruit er navnet på vores funktion. (fruit) er funktionens parameter, som får sin værdi fra "onClick" atributten i html'en. Dette henvises til senere.
+    frugtArray[fruit] ++; //Denne indlæser værdien fra parameteret (fruit), som den bruger til at tilføje 1 til den ønskede position.
+    var prisialt = 0, frugterialt = 0; //Denne linje nulstiller værdien af "prisialt" og "frugtialt", for ikke at tilføje de tidligere værdier igen.
+    for (i = 0; i  < frugtArray.length; i++) { //her er "i" en variabel, som tæller antal af løkker der er kørt. "frugtArray.length" bruges her til, at sørge for, at løkken kører 5 gange, da "i" starter i 0, og frugtArray.length har værdien 5.
+        frugterialt += frugtArray[i]; //(frugterialt = frugterialt + frugtArray[i]), her bruges "i" til at læse værdien af alle frugtArray felterne, da løkken er sat op til at køre igennem dem alle.
     }
-    if (fruit === 'parPear') {
-        pear++;
-        frugtArray[1] = pear;
-        document.getElementById("pearholder").innerHTML = "Antal pærer: " + (pear);
-    }
-
-    if (fruit === 'parBanana') {
-        banana++;
-        frugtArray[2] = banana;
-        document.getElementById("bananaholder").innerHTML = "Antal bananer: " + (banana);
-    }
-
-    if (fruit === 'parOrange') {
-        orange++;
-        frugtArray[3] = orange;
-        document.getElementById("orangeholder").innerHTML = "Antal appelsiner: " + (orange);
-    }
-
-    if (fruit === 'parPeach') {
-        peach++;
-        frugtArray[4] = peach;
-        document.getElementById("peachholder").innerHTML = "Antal ferskner: " + (peach);
-    }
-
-    var sum = frugtArray.reduce(add, 0);
-
-    function add(a, b) {
-        return a + b;
-    }
-
-    document.getElementById("placeholderIalt").innerHTML = "Antal frugter i alt: " + (sum);
-    document.getElementById("prisIalt").innerHTML = "Pris i alt: " + (sum * 4) + " DKK";
+    prisialt = frugterialt * 4; //I det prisen per frugt er 4 kr., gange vi antallet af frugter med 4.
+    document.getElementById("placeholderIalt").innerHTML = "Antal frugter i alt: " + (frugterialt); //skriver hvor mange frugter der er bestilt.
+    document.getElementById("prisIalt").innerHTML = "Pris i alt: " + prisialt + " DKK"; //skriver hvor meget frugterne koster
 }

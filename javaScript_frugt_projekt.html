@@ -2,32 +2,33 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="frugtCSS.css">
     <meta charset="UTF=8">
     <title>min HTML og javaScript testside</title>
 </head>
 
 <body>
-    <h1 id="overskriften">Farserede frugter!</h1>
-    <p id="appleholder">Antal æbler: 0</p>
-    <p id="pearholder">Antal pærer: 0</p>
-    <p id="bananaholder">Antal bananer: 0</p>
-    <p id="orangeholder">Antal appelsiner: 0</p>
-    <p id="peachholder">Antal ferskner: 0</p>
+<div id="pagewrap">
+    <h1 id="overskrift">Frågt!</h1>
+    
+    <!-- onClick sørger for, at event bliver "aktiveret", når der trykkes på et af frugtbillederne -->
+    <img id="apple" src="pictures/apple.jpg" onClick="addFruit(0)" width="100" alt="Apple">
 
-    <p id="placeholderIalt">Antal frugter i alt: 0</p>
+    <img id="pear" src="pictures/pear.jpg" onClick="addFruit(1)" width="100" alt="Pear">
+
+    <img id="banana" src="pictures/banana.JPG" onClick="addFruit(2)" width="100" alt="Banana">
+
+    <img id="orange" src="pictures/orange.jpg" onClick="addFruit(3)" width="100" alt="Orange">
+
+    <img id="peach" src="pictures/peach.png" onClick="addFruit(4)" width="100" alt="Peach">
+
+    <p id="placeholderIalt">Antal frugter i alt: 0</p><!-- "placeholderIalt" er id'et, som bruges til at specificere hvor antallet af frugter bliver vist på sitet -->
     <p id="prisIalt">Pris i alt: 0 DKK</p>
-
-    <img id="apple" src="pictures/apple.jpg" onclick="addFruit('parApple')" width="100" alt="Apple">
-
-    <img id="pear" src="pictures/pear.jpg" onclick="addFruit('parPear')" width="100" alt="Pear">
-
-    <img id="banana" src="pictures/banana.JPG" onclick="addFruit('parBanana')" width="100" alt="Banana">
-
-    <img id="orange" src="pictures/orange.jpg" onclick="addFruit('parOrange')" width="100" alt="Orange">
-
-    <img id="peach" src="pictures/peach.png" onclick="addFruit('parPeach')" width="100" alt="Peach">
+</div>
+    
+    
 </body>
 </html>
-
+<!-- nedenstående linker til et javaScript dokument -->
 <script src="javascript.js">
 </script>
